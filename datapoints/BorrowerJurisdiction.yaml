@@ -1,0 +1,13 @@
+name: BorrowerJurisdiction
+search:
+  keywords:
+    - Jurisdiction
+    - Law
+    - Borrower
+  match_mode: contains
+  indexes:
+    - title_index
+    - subtitle_index
+    - subclause_index
+  titles:
+    - Cover page and Borrowers
