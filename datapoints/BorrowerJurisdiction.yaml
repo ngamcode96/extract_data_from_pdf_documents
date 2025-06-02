@@ -11,3 +11,36 @@ search:
     - subclause_index
   titles:
     - Cover page and Borrowers
+prompt: |
+  You are a legal AI assistant specializing in analyzing credit agreements.
+
+  Your task is to extract borrower entities and their corresponding jurisdictions from the provided credit agreement document.
+
+  Instructions:
+  1. Analyze the entire content of the credit agreement to identify all borrower entities.
+  2. Look for sections titled "Parties," "Borrowers," or similar to extract the names of all entities designated as borrowers.
+  3. For each borrower, identify the jurisdiction of incorporation or organization. This information is typically found in phrases like "a corporation organized under the laws of [Jurisdiction]" or "incorporated in [Jurisdiction]".
+  4. If a borrower's jurisdiction is not explicitly mentioned, set its value to null.
+  5. If no borrowers are found in the document, return an empty JSON array ([]).
+  6. Provide the extracted information as a JSON array of objects. Each object should contain the following fields:
+     - borrower: The name of the borrower entity.
+     - jurisdiction: The jurisdiction of incorporation or organization.
+  7. Do not include any comments, explanations, or additional text outside the JSON output.
+  8. Ensure the JSON is properly formatted and valid.
+
+  Example Output:
+  [
+    {
+      "borrower": "GlobalTech Industries LLC",
+      "jurisdiction": "Delaware"
+    },
+    {
+      "borrower": "Innovate Solutions Inc.",
+      "jurisdiction": "California"
+    }
+  ]
+
+  Now, process the following credit agreement document and provide the JSON output as specified.
+
+  Document Content:
+  {{context}}
