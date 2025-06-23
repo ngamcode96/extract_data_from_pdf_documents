@@ -15,3 +15,8 @@ class Title(Node):
         result += self.text + "\n"
         result += "\n".join([subtitle.describe() for subtitle in self.subtitles])
         return result
+
+    @classmethod
+    def seach_in_titles(cls, t, element):
+        element = element.lower()
+        return (element in t.title.lower() or element in t.text.lower())

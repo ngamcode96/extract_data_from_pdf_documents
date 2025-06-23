@@ -19,3 +19,10 @@ class Subtitle(Node):
             result += key + "\n"
             result +=  "\n".join([definition.describe() for definition in values])
         return result
+    
+    @classmethod
+    def seach_in_subtitles(cls, s, element):
+        element = element.lower()
+        return (element in s.subtitle.lower() or element in s.text.lower())
+
+    
